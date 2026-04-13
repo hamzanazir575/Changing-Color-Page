@@ -26,22 +26,28 @@ btn.addEventListener('click', () => {
   });
 });
 
+let rotateInterval;
+
 btn2.addEventListener('click', () => {
-  const rotateInterval = setInterval(() => {
-    const x = Math.floor(
-      Math.random() * (document.body.clientWidth - heading.offsetWidth),
-    );
+  if (rotateInterval) {
+    // STOP
+    clearInterval(rotateInterval);
+    rotateInterval = null;
+    heading.style.transform = '';
+  } else {
+    // START
+    rotateInterval = setInterval(() => {
+      const x = Math.floor(
+        Math.random() * (document.body.clientWidth - heading.offsetWidth),
+      );
 
-    const y = Math.floor(
-      Math.random() * (document.body.clientHeight - heading.offsetHeight),
-    );
+      const y = Math.floor(
+        Math.random() * (document.body.clientHeight - heading.offsetHeight),
+      );
 
-    const rotate = Math.floor(Math.random() * 360);
+      const rotate = Math.floor(Math.random() * 360);
 
-    heading.style.transform = `translate(${x}px, ${y}px) rotate(${rotate}deg)`;
-    btn2.addEventListener('click', () => {
-      clearInterval(rotateInterval);
-      heading.style.transform = '';
-    });
-  }, 2000);
+      heading.style.transform = `translate(${x}px, ${y}px) rotate(${rotate}deg)`;
+    }, 2000);
+  }
 });
