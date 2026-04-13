@@ -1,0 +1,38 @@
+body {
+  transition: background-color 0.5s ease;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  font-family: 'Bitcount Grid Double', monospace;
+}
+
+h1 {
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  transition: all 0.5s ease;
+  font-size: 30px;
+}
+
+h1:hover {
+  cursor: pointer;
+  scale: 1.2;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container button {
+  padding: 10px 20px;
+  margin: 30px;
+  font-size: 20px;
+  transition: all 0.5s ease;
+  border-radius: 14px;
+  font-family: 'Bitcount Grid Double', monospace;
+}
+.container button:hover {
+  cursor: pointer;
+  scale: 1.2;
+}
